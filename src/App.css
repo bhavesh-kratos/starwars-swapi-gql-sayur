@@ -9,6 +9,41 @@
   font-family: "Stjldbl1";
 }
 
+.bg-red {
+  background-color: #800000;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-yellow {
+  background-color: #DECA57;
+}
+
+.bg-purple {
+  background-color: purple;
+}
+
+.bg-orange {
+  background-color: orange;
+}
+
+.item-info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 60vw;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,21 +1,62 @@
 import { useQuery } from '@apollo/client'
-import React from 'react'
-import Button from 'react-bootstrap/Button'
-import { getAllFilms } from '../apollo/GraphQL/Queries'
+import React, { useEffect } from 'react'
+import { Container } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+import { getAllData } from '../apollo/GraphQL/Queries'
+import SearchInput from '../components/molecules/SearchInput.jsx'
+import List from '../components/organisms/List.jsx'
+import { debounce, retrieveDataAsMap } from '../utils/helpers'
 
-function Demo() {
-  const { error, loading, data } = useQuery(getAllFilms)
+function Main() {
+  const { error, loading, data } = useQuery(getAllData)
+  const [filteredListData, setFilteredListData] = React.useState([])
+  const [searchValue, setSearchValue] = React.useState('')
+  const navigate = useNavigate()
+  const listItems = retrieveDataAsMap(data)
+
+  const setFilterData = (value) => {
+    const filteredData = listItems.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+    setFilteredListData(filteredData)
+  }
+
   React.useEffect(() => {
-    console.log(data)
+    setFilterData(searchValue)
   }, [data])
+
+  const onInputChange = (e) => {
+    const { value } = e.target
+    debounce(() => {
+      setFilterData(value)
+      setSearchValue(value)
+    })()
+  }
+
+  const onSWItemClick = (item) => {
+    navigate(`/details/${item.__typename}/${item.id}`)
+  }
+
+  // console.log({ filteredListData })
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Error!</div>
+  }
 
   return (
     <div>
-      <h1 className="app-heading">
-        Star Wars <br /> Encyclopedia
-      </h1>
+      <Container className="fluid">
+        <h1 className="app-heading mb-5">
+          Star Wars <br /> Encyclopedia
+        </h1>
+        <SearchInput className="mb-3" onChange={onInputChange} />
+
+        <List listItems={filteredListData} onItemClick={onSWItemClick} />
+      </Container>
     </div>
   )
 }
 
-export default Demo
+export default Main

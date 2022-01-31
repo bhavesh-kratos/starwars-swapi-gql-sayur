@@ -1,20 +1,19 @@
 import React from 'react'
-import { ApolloProvider } from '@apollo/client'
-import Page from './pages'
-import { getApolloClient } from './apollo'
+import { Route, Routes } from 'react-router-dom'
+import MainPage from './pages'
+import DetailsPage from './pages/DetailsPage.jsx'
 
 import './App.css'
 
 function App() {
-  const client = getApolloClient()
-
   return (
-    <ApolloProvider client={client}>
-      <div className="App">
-        <Page />
-      </div>
-    </ApolloProvider>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/details/:type/:id" element={<DetailsPage />} />
+      </Routes>
+    </div>
   )
 }
-
+// ;<Page />
 export default App

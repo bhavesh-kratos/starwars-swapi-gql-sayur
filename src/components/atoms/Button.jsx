@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button, Icon } from 'react-bootstrap'
 
-function Button() {
+function AppButton({ text, color, onClick }) {
   return (
-    <div>
-      <Button></Button>
-    </div>
+    <Button color={color} onClick={onClick}>
+      {text}
+    </Button>
   )
 }
 
-export default Button
+export default AppButton
