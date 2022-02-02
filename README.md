@@ -2,6 +2,8 @@
 
 SWAPI graphql api is used to develop this project
 
+Demo app: https://swapi-sayur.netlify.app/
+
 ## Details
 Framework and libraries 
 - Reactjs
