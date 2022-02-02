@@ -1,7 +1,12 @@
 .App {
   text-align: center;
-  background-color: #202124;
+  background-color: #0F1037;
   min-height: 100vh;
+  background-image: url('./star-wars.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .app-heading {
@@ -44,6 +49,13 @@
   cursor: pointer;
 }
 
+.App-logo-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -78,4 +90,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sw-404-page {
+  color: whitesmoke;
+  font-size: 60px;
+  font-family: "Stjldbl1";
 }

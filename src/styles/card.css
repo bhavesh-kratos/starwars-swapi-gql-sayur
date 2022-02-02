@@ -1,0 +1,42 @@
+.sw-card {
+    opacity: 0.85;
+}
+
+.sw-details-title {
+    position: relative;
+    font-size: 30px;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+
+.sw-details-title:before,
+.sw-details-title:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 2px;
+    content: '\a0';
+    background-color: purple;
+}
+
+.sw-details-title:before {
+    margin-left: -50%;
+    text-align: right;
+}
+
+.sw-details-text {
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* .sw-details-key:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 2px;
+    content: '\a0';
+    background-color: purple;
+} */

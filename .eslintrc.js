@@ -34,6 +34,7 @@ module.exports = {
     camelcase: 0,
     'no-nested-ternary': 0,
     'react/jsx-wrap-multilines': 0,
+    'react/jsx-props-no-spreading': 0,
     'object-curly-newline': 0,
     'operator-linebreak': 0,
     'no-unused-expressions': 0,

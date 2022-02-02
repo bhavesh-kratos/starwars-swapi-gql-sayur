@@ -2,10 +2,11 @@ import React from 'react'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 import Tag from '../atoms/Tag.jsx'
 import { TAG_COLOR } from '../../utils/constants'
+import '../../styles/list.css'
 
 function List({ listItems, onItemClick = () => {} }) {
   return (
-    <ListGroup as="ul" numbered>
+    <ListGroup className="sw-list" as="ul" numbered>
       {listItems.map((item, index) => (
         <ListGroup.Item
           key={`${item.id}`}

@@ -1,0 +1,31 @@
+.sw-details-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center
+}
+
+.sw-btn {
+    color: #fff;
+    background-color: transparent !important;
+    background-color: cutom-color;
+    border-color: white !important;
+    border-width: 2px !important;
+}
+
+.sw-btn:hover {
+    color: #fff;
+    background-color: purple !important;
+    border-color: purple !important;
+}
+
+.sw-values-list {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    list-style-type: square;
+}
+
+.sw-values-list li {
+    margin-right: 10px;
+}
